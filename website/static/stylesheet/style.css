@@ -67,6 +67,7 @@ nav{
         top: 8vh;
         background-color: #FFD2DD;
         display: flex;
+        flex-direction: column;
         align-items: center;
         width: 100%;
         transform: translateX(100%);
@@ -93,4 +94,135 @@ nav{
         opacity: 1;
         transform: translateX(0px);
     } 
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.contactus-container{
+    width: 80%;
+    margin: 50px auto;
+}
+
+.contact-box{
+    background: #b491c8;
+    display: flex;
+}
+
+.contact-left{
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+
+.contact-right{
+    flex-basis: 40%;
+    padding: 40px;
+    background: #FFD2DD;
+    color: black;
+}
+
+h1{
+    margin-bottom: 10px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    letter-spacing: 2px;
+}
+
+p{
+    margin-bottom: 40px;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.contact-left h3{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.contact-right h3{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-row .input-group{
+    flex-basis: 45%;
+}
+
+input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    padding-bottom: 5px;
+    border-radius: 25px;
+    padding-left: 10px;
+}
+
+textarea{
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 10px;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+label{
+    margin-bottom: 6px;
+    display: block;
+    color: black;
+    font-family: sans-serif;
+}
+
+button{
+    background: #FFD2DD;
+    width: 100px;
+    border: none;
+    outline: none;
+    color: black;
+    height: 35px;
+    border-radius: 30px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+tr td:first-child{
+    padding-right: 20px;
+}
+
+tr td{
+    padding-top: 20px;
+    font-family: sans-serif;
+}
+
+@media screen and (max-width: 850px) {
+    .contact-box{
+        width: 100%;
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    .input-row{
+        flex-direction: column;
+    }
+
+    .contact-right{
+        font-size: 14px;
+    }
 }

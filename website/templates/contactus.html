@@ -1,0 +1,56 @@
+{% extends "base.html" %} 
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="contactus-container">
+    <h1>Contact Us</h1>
+    <p>Feel free to get in touch!</p>
+    <div class="contact-box">
+        <div class="contact-left">
+            <h3>Send Request</h3>
+            <form>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="John smith">
+                    </div>
+                    <div class="input-group">
+                        <label>Phone</label>
+                        <input type="text" placeholder="07000000000">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Johnsmith@email.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Subject</label>
+                        <input type="text" placeholder="Subject">
+                    </div>
+                </div>
+                <label>Message</label>
+                <textarea rows="5"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div class="contact-right">
+            <h3>Reach Us</h3>
+            <table>
+                <tr>
+                    <td>Email</td>
+                    <td>contactus@minddump.com</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>020 4456 9887</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>14 Homelander Street, High Wycombe, WY4 7SL</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
