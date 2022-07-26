@@ -279,3 +279,29 @@ tr td{
     padding-bottom: 10px;
     border: 2px solid #04AA6D;
 }
+
+#post {
+    width: 100%;
+}
+
+.display{
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-size: 15px;
+    border: 7px solid #FFD2DD;
+    border-radius: 30px;
+}
+
+.post-delete{
+    margin-left: 10px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding-bottom: 23px;
+    background-color: transparent;
+    border: none;
+}

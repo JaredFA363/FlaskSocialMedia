@@ -18,15 +18,21 @@
                     <h4>MIND-DUMP</h4>
             </div>
             <ul class = "nav-links">
+                {% if user.is_authenticated %}
                 <li>
                     <a href="/">Home</a>
                 </li>
+                <li>
+                    <a href="/logout">LogOut</a>
+                </li>
+                {% else %}
                 <li>
                     <a href="/login">Login</a>
                 </li>
                 <li>
                     <a href="/signup">SignUp</a>
                 </li>
+                {% endif %}
                 <li>
                     <a href="/contactus">Contact Us</a>
                 </li>
@@ -45,17 +51,11 @@
             <div class="alert-danger" role="alert">
                 <span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
                 {{ message }}
-                <!---button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button-->
             </div>
             {% else %}
             <div class="alert-success" role="alert">
                 <span class="success-close" onclick="this.parentElement.style.display='none';">&times;</span>
                 {{ message }}
-                <!--button type="button" class="success-close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button-->
             </div>
             {% endif %}
             {% endfor %}
