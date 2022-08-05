@@ -20,7 +20,9 @@ def home():
             db.session.commit()
             flash('Posted', category='success')
 
-    return render_template("home.html", user=current_user)
+    posts = Post.query.all()
+
+    return render_template("home.html", user=current_user, posts=posts)
 
 @views.route("/contactus")
 def contactus():

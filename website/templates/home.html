@@ -4,9 +4,11 @@
 {% block content %}
 <h1 align="center">Add Post</h1>
 <ul id="posts">
-    {% for post in user.posts %}
+    {% for post in posts %}
     <li class="display">
         {{ post.data }}
+        <br>
+        {{ post.userpost.username }}
         <button type="button" class="post-delete" onclick="deletePost({{ post.id }})">
             <span aria-hidden="true">&times;</span>
         </button> 
