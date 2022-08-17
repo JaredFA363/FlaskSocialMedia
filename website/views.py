@@ -11,7 +11,7 @@ views = Blueprint('views', __name__)
 def home():
     if request.method == 'POST':
         post = request.form.get('post')
-
+        
         if len(post) < 1:
             flash('Post is too Short!', category='error')
         else:
