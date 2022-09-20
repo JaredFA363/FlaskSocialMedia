@@ -4,6 +4,9 @@ A responsive social media website using Python-flask, Css , Html and Javascript.
 
 ## Demo
 
+https://user-images.githubusercontent.com/52663734/191273047-f2acb577-614f-41f0-98ed-247c41de5673.mp4
+
+
 ## Using Application
 
 - Clone Github Repository
