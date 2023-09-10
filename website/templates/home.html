@@ -3,6 +3,17 @@
 
 {% block content %}
 <h1 align="center">Add Post</h1>
+
+{% if user.is_authenticated %}
+    <form method="POST">
+        <textarea name="post" id="post"></textarea>
+        <div align="center" >
+            <button type="submit">Post!</button>
+        </div>
+    </form>
+    <br>
+{% endif %}
+
 <ul id="posts">
     {% for post in posts %}
     <li class="display">
@@ -16,12 +27,4 @@
     <br>
     {% endfor %}
 </ul>
-{% if user.is_authenticated %}
-    <form method="POST">
-        <textarea name="post" id="post"></textarea>
-        <div align="center" >
-            <button type="submit">Post!</button>
-        </div>
-    </form>
-{% endif %}
 {% endblock %}

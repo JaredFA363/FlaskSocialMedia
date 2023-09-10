@@ -22,7 +22,7 @@ def home():
 
     posts = Post.query.all()
 
-    return render_template("home.html", user=current_user, posts=posts)
+    return render_template("home.html", user=current_user, posts=posts[::-1])
 
 @views.route("/contactus")
 def contactus():
