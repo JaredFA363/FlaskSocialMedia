@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, flash, request, jsonify
+from flask import Blueprint, render_template, flash, request, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from .models import Post
 from . import db
@@ -10,15 +10,7 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        post = request.form.get('post')
-        
-        if len(post) < 1:
-            flash('Post is too Short!', category='error')
-        else:
-            new_post = Post(data=post, user_id=current_user.id)
-            db.session.add(new_post)
-            db.session.commit()
-            flash('Posted', category='success')
+        return redirect(url_for('views.create_post'))
 
     posts = Post.query.all()
 
@@ -40,3 +32,20 @@ def delete_post():
             db.session.commit()
     #retuns emoty response always needs to retunr
     return jsonify({})
+
+@views.route('/create-post', methods=['GET','POST'])
+@login_required
+def create_post():
+    if request.method == 'POST':
+        post = request.form.get('post')
+        link = request.form.get('link')
+        
+        if len(post) < 1 or len(link) < 1:
+            flash('Post is too Short!', category='error')
+        else:
+            new_post = Post(data=post,link = link, user_id=current_user.id)
+            db.session.add(new_post)
+            db.session.commit()
+            flash('Posted: return to home', category='success')
+            
+    return render_template("createpost.html",user=current_user)

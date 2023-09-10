@@ -6,7 +6,6 @@
 
 {% if user.is_authenticated %}
     <form method="POST">
-        <textarea name="post" id="post"></textarea>
         <div align="center" >
             <button type="submit">Post!</button>
         </div>
@@ -17,6 +16,8 @@
 <ul id="posts">
     {% for post in posts %}
     <li class="display">
+        <img src= "{{post.link}}">
+        <br>
         {{ post.data }}
         <br>
         {{ post.userpost.username }}
